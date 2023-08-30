@@ -19,4 +19,11 @@ export class EmployeeService {
       messages: [{ value: 'this is emplotyee update' }],
     });
   }
+  async delete() {
+    console.log('delete call');
+    this._kafka.produce({
+      topic: 'delete-employee',
+      messages: [{ value: 'this is employee delete' }],
+    });
+  }
 }
